@@ -154,8 +154,8 @@ EOF  all  create  destroy  help  quit  show  update
 No known bugs at this time. 
 
 ## Authors
-Mordecai Wambua  - [Github](https://github.com/Mordecai-Wambua)/ [
- Livingstone Okero - [Github](https://github.com/livingstoneamisi) / [
+Mordecai Wambua  - [Github](https://github.com/Mordecai-Wambua)/ 
+ Livingstone Okero - [Github](https://github.com/livingstoneamisi) / 
 
 Second part of Airbnb: Joann Vuong
 ## License
