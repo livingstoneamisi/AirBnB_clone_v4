@@ -1,11 +1,16 @@
-$('document').ready(function () {
-  let amenities = {};
-  $('INPUT[type="checkbox"]').change(function () {
-    if ($(this).is(':checked')) {
+window.addEventListener('load', function () {
+  const amenities = {};
+  $('input[type=checkbox]').change(function () {
+    if ($(this).prop('checked')) {
       amenities[$(this).attr('data-id')] = $(this).attr('data-name');
     } else {
       delete amenities[$(this).attr('data-id')];
     }
-    $('.amenities H4').text(Object.values(amenities).join(', '));
+
+    if (Object.keys(amenities).length === 0) {
+      $('div.amenities h4').html('&nbsp');
+    } else {
+      $('.amenities H4').text(Object.values(amenities).join(', '));
+    }
   });
 });
