@@ -1,24 +1,24 @@
-$('document').ready(function () {
-  const url = 'http://' + window.location.hostname + ':5001/api/v1/status/';
-  $.get(url, function (response) {
-    if (response.status === 'OK') {
-      $('DIV#api_status').addClass('available');
+window.addEventListener('load', function () {
+  $.ajax('http://127.0.0.1:5001/api/v1/status/').done(function (data) {
+    if (data.status === 'OK') {
+      $('#api_status').addClass('available');
     } else {
-      $('DIV#api_status').removeClass('available');
+      $('#api_status').removeClass('available');
     }
   });
 
-  let amenities = {};
-  $('INPUT[type="checkbox"]').change(function () {
-    if ($(this).is(':checked')) {
+  const amenities = {};
+  $('input[type=checkbox]').change(function () {
+    if ($(this).prop('checked')) {
       amenities[$(this).attr('data-id')] = $(this).attr('data-name');
     } else {
       delete amenities[$(this).attr('data-id')];
     }
-    if (Object.values(amenities).length === 0) {
-      $('.amenities H4').html('&nbsp;');
+
+    if (Object.keys(amenities).length === 0) {
+      $('div.amenities h4').html('&nbsp');
     } else {
-      $('.amenities H4').text(Object.values(amenities).join(', '));
+      $('.amenities h4').text(Object.values(amenities).join(', '));
     }
   });
 });
