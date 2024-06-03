@@ -101,9 +101,15 @@ button:hover {
 .popover ul h2{
     margin-top: 1.5%;
     margin-bottom: 5%;
-    margin-left: 0px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
+.popover ul li input[type="checkbox"] {
+    vertical-align: middle;
+    margin-right: 10px;
+}
 .amenities:hover .popover,
 .locations:hover .popover {
     visibility: visible;
